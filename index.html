@@ -14,24 +14,30 @@
         padding: 0;
         background-color: black;
         color: white;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        overflow-x: hidden;
     }
+
+    .container {
+        width: 100%;
+        padding: 0;
+    }
+
     .c1, .c2, .c3, .c4{
         height: 100vh;
         width: 100%;
         display: flex;
         align-items: center;
-        text-align: center;
         justify-content: space-evenly;
+        flex-wrap: wrap;
     }
+
     .c1 .name, .photo, .dev{
-        height: 99vh;
-        width: 33.33vw;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        text-align: center;
         font-size: 4rem;
         font-family: "Bebas Neue";
     }
+
     .c1 .photo .circle{
         height: 400px;
         width: 400px;
@@ -41,69 +47,147 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
     }
+
     .c1 .photo .circle img{
-        height: 400px;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
     }
+
     .c2 .about{
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        width: 60vw;
         font-size: 1.7rem;
         text-align: center;
-        width: 60vw;
     }
+
     .c3{
         flex-direction: column;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        width: 100%;
     }
+
     .c3 .projects{
-        width: 45vw;
-        height: 20vh;
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 20px;
     }
-    .c4{
-        height: 60vh;
-        width: 100%;
-        background-color: rgb(32, 32, 32);
-        text-align: center;
-        flex-direction: column;
-    }
-    .c4 p{
-        font-family: "Bebas Neue";
-    }
-    .c4 .sites svg{
-        /* width: 50vw; */
-        gap: 30px;
-        margin: 0 50px;
-        cursor: pointer;
-    }
+
     .c3 .projects button{
         height: 50px;
-        width: 100px;
+        width: 150px;
         background-color: palevioletred;
         border-radius: 10px;
         color: white;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-weight: bold;
         border: none;
         cursor: pointer;
     }
+
     .c3 .projects button:hover{
         background-color: rgb(228, 72, 124);
-        transform: translate(-10px) scale(1.05);
+        transform: translateY(-10px) scale(1.05);
         transition: transform 0.3s ease;
     }
-    .c5{
+
+    .c4{
+        height: 60vh;
+        background-color: rgb(32, 32, 32);
+        text-align: center;
+        display: flex;
         flex-direction: column;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        text-align: center;
+    }
+
+    .c4 p{
+        font-family: "Bebas Neue";
+    }
+
+    .c4 .sites{
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        cursor: pointer;
+    }
+    p {
+        font-size: 1.7rem;
+    }
+
+    @media (max-width: 768px) {
+        p {
+            font-size: 1.4rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        p {
+            font-size: 1.2rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .c1 .name, .dev{
+            width: 100%;
+            font-size: 2.5rem;
+        }
+
+        .c1 .photo{
+            width: 100%;
+        }
+
+        .c1 .photo .circle{
+            height: 300px;
+            width: 300px;
+        }
+
+        .c2 .about{
+            width: 90vw;
+            font-size: 1.4rem;
+        }
+
+        .c3 .projects button {
+            width: 120px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .c1 .name, .dev{
+            font-size: 2rem;
+        }
+
+        .c1 .photo .circle{
+            height: 200px;
+            width: 200px;
+        }
+
+        .c2 .about{
+            font-size: 1.2rem;
+        }
+
+        .c3 .projects button{
+            width: 100px;
+        }
+    }
+    .c5{
+    flex-direction: column;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
     .c5 .skills{
-        width: 45vw;
-        height: 20vh;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
+    width: 45vw;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     }
 </style>
 <body>
@@ -115,7 +199,7 @@
                     <img src="images/Unnat.jpg" alt="teri shakal">
                 </div>
             </div>
-            <div class="dev">PYTHON<br>PROGRAMMER</div>
+            <div class="dev">PYTHON<br>PROGRAMMAR</div>
         </div>
         <div class="c2">
             <div class="about">
@@ -149,10 +233,9 @@
             <div class="projects">
                 <div class="p1"><a href="https://github.com/UnnatMalik/Food-App.git"><button>Project 1</button></a></div>
                 <div class="p2"><a href="https://github.com/UnnatMalik/CalcPy.git"><button>Project 2</button></a></div>
-                <div class="p3"><a href="https://github.com/UnnatMalik/DBMS-Website"><button>Project 3</button></a></div>
+                <div class="p3"><a href="https://github.com/UnnatMalik/DBMS-Website.git"><button>Project 3</button></a></div>
             </div>
         </div>
-        
         <div class="c4">
             <h1>Let's Connect</h1>
             <div class="sites">
