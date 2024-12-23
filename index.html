@@ -4,12 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unnat Malik - Portfolio
+    <title>Unnat Malik
     </title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap"
-    rel="stylesheet">
-    <link rel="icon" href="images/Screenshot 2024-10-07 095607.png"
-    type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/Screenshot 2024-10-07 095607.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
     <style>
         * {
             margin: 0;
@@ -54,6 +53,16 @@
             transition: transform 0.3s ease;
             overflow: hidden;
             margin-top: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         h1 {
@@ -77,8 +86,18 @@
             overflow: hidden;
             margin: 20px auto;
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+            animation: zoomIn 1s ease-in-out forwards;
         }
-
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
         .photo img {
             width: 100%;
             height: 100%;
@@ -100,6 +119,7 @@
             color: white;
             text-decoration: none;
             transition: background 0.3s ease, transform 0.3s ease;
+            animation: fadeIn 1.2s ease-in-out forwards;
         }
 
         .button:hover {
@@ -111,6 +131,7 @@
         .projects {
             margin: 30px 0;
             text-align: left;
+            animation: slideIn 1s ease-in-out forwards;
         }
 
         .about h2,
@@ -119,6 +140,7 @@
             font-size: 2.5rem;
             margin-bottom: 15px;
             color: #ff6f61;
+            animation: slideIn 1s ease-in-out forwards;
         }
 
         .about p,
@@ -126,6 +148,7 @@
             font-size: 1rem;
             line-height: 1.8;
             color: #ccc;
+            animation: slideIn 1s ease-in-out forwards;
         }
 
         .project-list {
@@ -152,6 +175,7 @@
             font-size: 1.2rem;
             color: #ff6f61;
             margin-bottom: 8px;
+
         }
 
         @media screen and (max-width: 600px) {
@@ -176,149 +200,159 @@
                 font-size: 1.2rem;
             }
         }
-
-        .carousel-container {
-            position: relative;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 80vh;
-            overflow: hidden;
-        }
-
-        .carousel {
-            display: flex;
-            transition: transform 0.4s ease-in-out;
-            width: 100%;
-        }
-
-        .project-item {
-            min-width: 100%;
-            position: relative;
-        }
-
-        .project-image {
-            width: 100%;
-            height: 80vh;
-            object-fit: inherit;
-            display: block;
-            transition: opacity 0.3s ease;
-        }
-
-        .project-item:hover .project-image {
-            opacity: 0.5;
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .project-item:hover .overlay {
-            opacity: 1;
-        }
-
-        .project-title {
-            font-size: 2.5em;
-            margin: 10px 0;
-        }
-
-        .prev-btn,
-        .next-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            z-index: 1;
-        }
-
-        .prev-btn {
-            left: 10px;
-        }
-
-        .next-btn {
-            right: 10px;
-        }
-
-        .prev-btn:hover,
-        .next-btn:hover {
-            background: rgba(0, 0, 0, 0.8);
-        }
-        .education {
+        
+.education {
     margin: 30px 0;
     text-align: left;
+    animation: slideIn 1s ease-in-out forwards;
 }
 
-.education h2 {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 2.5rem;
-    margin-bottom: 15px;
+    .education h2 {
+        font-family: 'Bebas Neue', cursive;
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        color: #ff6f61;
+        animation: slideIn 1s ease-in-out forwards;
+    }
+
+    .education ul {
+        /* list-style-type: none; */
+        padding: 0;
+        animation: slideIn 1s ease-in-out forwards;
+    }
+
+    .education li {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: #ccc;
+        margin-bottom: 10px;
+        animation: slideIn 1s ease-in-out forwards;
+    }
+
+    .education ul ul {
+        margin-top: 10px;
+        padding-left: 20px;
+        animation: slideIn 1s ease-in-out forwards;
+    }
+
+    .education ul ul li {
+        color: #aaa; 
+        animation: slideIn 1s ease-in-out forwards;
+    }
+
+    .Skill h2 {
+        font-family: 'Bebas Neue', cursive;
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        color: #ff6f61;
+        animation: slideIn 1s ease-in-out forwards;
+    }
+
+    .Skill ul {
+        /* list-style-type: none; */
+        padding: 0;
+        animation: slideIn 1s ease-in-out forwards;
+    }
+
+    .Skill li {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: #ccc;
+        margin-bottom: 10px;
+        animation: slideIn 1s ease-in-out forwards;
+    }
+
+    .Skill ul ul {
+        margin-top: 10px;
+        padding-left: 20px;
+        animation: slideIn 1s ease-in-out forwards;
+    }
+
+    .Skill ul ul li {
+        color: #aaa; 
+        animation: slideIn 1s ease-in-out forwards;
+    }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+    .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    animation: fadeInUp 1s ease-in-out forwards;
+    }
+    @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px) ;
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) ;
+            }
+        }
+
+.project-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: calc(50% - 20px); /* Each row will have 2 cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    background-color: #1e1e1e;
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px; /* Set a fixed height for all images */
+    object-fit: cover; /* Ensure images cover the area without distortion */
+}
+
+.card-content {
+    padding: 16px;
+}
+
+.project-title {
+    margin: 0 0 8px;
+    font-size: 1.5em;
     color: #ff6f61;
 }
 
-.education ul {
-    /* list-style-type: none; */
-    padding: 0;
+.project-card p {
+    margin: 0;
+    color: #bbb;
 }
 
-.education li {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #ccc;
-    margin-bottom: 10px;
+.project-link {
+    text-decoration: none; /* Remove underline from anchor tags */
+    color: inherit;
 }
 
-.education ul ul {
-    margin-top: 10px;
-    padding-left: 20px;
+.icon-links {
+    display: flex;
+    gap: 50px;/* Space icons evenly */
+    margin-top: 30px;
 }
 
-.education ul ul li {
-    color: #aaa; 
-}
-
-.Skill h2 {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    color: #ff6f61;
-}
-
-.Skill ul {
-    /* list-style-type: none; */
-    padding: 0;
-}
-
-.Skill li {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #ccc;
-    margin-bottom: 10px;
-}
-
-.Skill ul ul {
-    margin-top: 10px;
-    padding-left: 20px;
-}
-
-.Skill ul ul li {
-    color: #aaa; 
+.github-icon, .external-icon {
+    gap: 50px;
+    width: 32px;
+    height: 32px;
 }
 
     </style>
@@ -394,82 +428,76 @@
         <hr>
 
         <div class="projects">
-            <h2>Projects</h2>
-            <div class="carousel-container">
-                <button class="prev-btn">&#10094;</button>
-                <div class="carousel">
-                    <div class="project-item">
-                        <a href="https://dbms-website.vercel.app/">
-                            <img src="images/Screenshot 2024-10-06 110548.png" alt="dbms" class="project-image">
-                            <div class="overlay">
-                                <h3 class="project-title">DBMS Website</h3>
-                                <p>A site that contains all the information about the DBMS subject in one place.</p>
-                            </div>
-                        </a>
+                <h2>Projects</h2>
+                    <div class="card-container">
+                        <div class="project-card">
+                            <a href="" class="project-link">
+                                <img src="images/DBMS.png" alt="DBMS Website" class="project-image">
+                                <div class="card-content">
+                                    <h3 class="project-title">DBMS Website</h3>
+                                    <p>This website consolidates all the essential information about the DBMS subject in one place, making it a valuable resource for students and professionals alike.</p>
+                                    <a href="https://github.com/UnnatMalik/DBMS-Website" class="github-link">
+                                        <img src="images/github.png" alt="GitHub" class="github-icon">
+                                    </a>
+                                    <a href="https://dbms-website.vercel.app/" class="external-link">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png" alt="External Link" class="external-icon">
+                                    </a>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="project-card">
+                            <a href="https://github.com/UnnatMalik/Bank-Portal.git" class="project-link">
+                                <img src="images/Bank-Protal.png" alt="Bank Portal" class="project-image">
+                                <div class="card-content">
+                                    <h3 class="project-title">Bank Portal</h3>
+                                    <p>An intuitive and responsive banking platform demonstrating the capabilities of front-end and back-end web technologies.</p>
+                                    <a href="https://github.com/UnnatMalik/Bank-Portal" class="github-link">
+                                        <img src="images/github.png" alt="GitHub" class="github-icon">
+                                    </a>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="project-card">
+                            <a href="https://github.com/UnnatMalik/Bro-Bot-AI" class="project-link">
+                                <img src="images/bro-bot-ai.png" alt="Bro-Bot-AI" class="project-image">
+                                <div class="card-content">
+                                    <h3 class="project-title">Bro-Bot-AI</h3>
+                                    <p>This is a AI chat bot made with Ollama LLM using LLama3 model and langchain.</p>
+                                    <br>
+                                    <a href="https://github.com/UnnatMalik/Bro-Bot-AI" class="github-link">
+                                        <img src="images/github.png" alt="GitHub" class="github-icon">
+                                    </a>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="project-card">
+                            <a href="https://github.com/UnnatMalik/CalcPy" class="project-link">
+                                <img src="images/Calculator.png" alt="CalcPy" class="project-image">
+                                <div class="card-content">
+                                    <h3 class="project-title">CalcPy</h3>
+                                    <p>A fully functional calculator built using Python and the Flet module, offering a seamless user experience.</p>
+                                    <br>
+                                    <a href="https://github.com/UnnatMalik/CalcPy" class="github-link">
+                                        <img src="images/github.png" alt="GitHub" class="github-icon">
+                                    </a>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="project-card">
+                            <a href="https://github.com/UnnatMalik/Food-App" class="project-link">
+                                <img src="images/Food-App.png" alt="Food App" class="project-image">
+                                <div class="card-content">
+                                    <h3 class="project-title">Food App</h3>
+                                    <p>A frontend UI for a food app, created using Python and the Flet module, showcasing a clean and user-friendly design.</p>
+                                    <a href="https://github.com/UnnatMalik/Food-App" class="github-link">
+                                        <img src="images/github.png" alt="GitHub" class="github-icon">
+                                    </a>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                    <div class="project-item">
-                        <a href="https://github.com/UnnatMalik/Bank-Portal.git">
-                            <img src="images/image.png" alt="dbms" class="project-image">
-                            <div class="overlay">
-                                <h3 class="project-title">Bank Portal</h3>
-                                <p>The Bank Portal web application was developed to demonstrate the <br> capabilities of front-end & Back-end web technologies <br>in creating an intuitive, responsive, and efficient banking platform.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project-item">
-                        <a href="https://github.com/UnnatMalik/CalcPy">
-                            <img src="images/Screenshot 2024-10-06 130735.png" alt="calc" class="project-image">
-                            <div class="overlay">
-                                <h3 class="project-title">CalcPy</h3>
-                                <p>A functioning Calculator made in python with the help of Flet module.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="project-item">
-                        <a href="https://github.com/UnnatMalik/Food-App">
-                            <img src="images/Screenshot 2024-10-03 194447.png" alt="food site" class="project-image">
-                            <div class="overlay">
-                                <h3 class="project-title">Food App</h3>
-                                <p>A Food App, which is not a fully fleged food app, but a frontend or UI of a food App
-                                    it is made in python using Flet Module. </p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <button class="next-btn">&#10095;</button>
-            </div>
         </div>
 
-        <script>
-            const carousel = document.querySelector('.carousel');
-            const prevBtn = document.querySelector('.prev-btn');
-            const nextBtn = document.querySelector('.next-btn');
-
-            let currentSlide = 0;
-
-            nextBtn.addEventListener('click', () => {
-                const totalSlides = document.querySelectorAll('.project-item').length;
-                if (currentSlide < totalSlides - 1) {
-                    currentSlide++;
-                } else {
-                    currentSlide = 0;
-                }
-                carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
-            });
-
-            prevBtn.addEventListener('click', () => {
-                const totalSlides = document.querySelectorAll('.project-item').length;
-                if (currentSlide > 0) {
-                    currentSlide--;
-                } else {
-                    currentSlide = totalSlides - 1;
-                }
-                carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
-            });
-            setInterval(() => {
-                nextBtn.click();
-            }, 5000);
-        </script>
     </div>
 </body>
 </html>
