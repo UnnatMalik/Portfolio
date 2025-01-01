@@ -312,6 +312,17 @@
     background-color: #1e1e1e;
     animation: fadeInUp 1s ease-in-out forwards;
 }
+.tech-stack {
+    display: flex;
+    gap: 10px; /* Increase the space between the icons */
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.tech-stack img {
+    height: 20px; /* Ensure all icons have the same height */
+    margin-right: 5px; /* Add some space to the right of each icon */
+}
 
 .project-card:hover {
     transform: scale(1.05);
@@ -399,28 +410,46 @@
         <hr>
 
         <div class="Skill" align = "Left">
-            <h2>Languages and Frameworks</h2>
+            <h2>Skills</h2>
             <ul>
                 <li>Languages
                     <ul>
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="40" alt="python logo"  />
-                            <img width="12" />
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" height="40" alt="c logo"  />
-                            <img width="12" />
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" height="40" alt="cplusplus logo"  />
+                        <img src="https://skillicons.dev/icons?i=py" height="40" alt="python logo"  />
+                        <img width="12" />
+                        <img src="https://skillicons.dev/icons?i=c" height="40" alt="c logo"  />
+                        <img width="12" />
+                        <img src="https://skillicons.dev/icons?i=cpp" height="40" alt="cplusplus logo"  />
+                        <img width="12" />
+                        <img src="https://skillicons.dev/icons?i=html" height="40" alt="html5 logo"  />
+                        <img width="12" />
+                        <img src="https://skillicons.dev/icons?i=css" height="40" alt="css3 logo"  />
                     </ul>
                 </li>
-                <li>Frameworks & Tools
+                <li>Frameworks/Libraries
                     <ul>
-                        <img src="https://skillicons.dev/icons?i=vscode" height="40" alt="vscode logo"  />
+                        <img src="https://skillicons.dev/icons?i=django" height="40" alt="django logo"  />
                         <img width="12" />
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg" height="40" alt="pycharm logo"  />
-                        <img width="12" />
+                        <img src="https://avatars.githubusercontent.com/u/215947?s=200&v=4" height="40" alt="Matplotlib"/>
+                    </ul>
+                </li>
+                <li>Tools
+                    <ul>
                         <img src="https://skillicons.dev/icons?i=github" height="40" alt="github logo"  />
                         <img width="12" />
                         <img src="https://skillicons.dev/icons?i=git" height="40" alt="git logo"  />
                         <img width="12" />
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" height="40" alt="django logo"  />
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg" height="40" alt="pycharm logo"  />
+                        <img width="12" />
+                        <img src="https://skillicons.dev/icons?i=vscode" height="40" alt="vscode logo"  />
+                        <img width="12" />
+                        <img src="https://skillicons.dev/icons?i=vercel" height="40" alt="vercel logo"  />
+                    </ul>
+                </li>
+                <li>Databases
+                    <ul>
+                        <img src="https://skillicons.dev/icons?i=mysql" height="40" alt="mysql logo"  />
+                        <img width="12" />
+                        <img src="https://skillicons.dev/icons?i=sqlite" height="40" alt="sqlite logo"  />
                     </ul>
                 </li>
             </ul>
@@ -435,6 +464,16 @@
                                 <img src="images/DBMS.png" alt="DBMS Website" class="project-image">
                                 <div class="card-content">
                                     <h3 class="project-title">DBMS Website</h3>
+                                    <h4>Tech Stack:</h4>
+                                    <div class="tech-stack">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="20" alt="python logo" />
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" height="20" alt="django logo"  />
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" height="20" alt="sqlite logo" />
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="20" alt="html5 logo" />
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="20" alt="css3 logo" />
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="20" alt="javascript logo" />
+                                        <img src="https://cdn.simpleicons.org/vercel/000000" height="20" alt="vercel logo"  />
+                                    </div>
                                     <p>This website consolidates all the essential information about the DBMS subject in one place, making it a valuable resource for students and professionals alike.</p>
                                     <a href="https://github.com/UnnatMalik/DBMS-Website" class="github-link">
                                         <img src="images/github.png" alt="GitHub" class="github-icon">
@@ -447,10 +486,22 @@
                         </div>
                         <div class="project-card">
                             <a href="https://github.com/UnnatMalik/Bank-Portal.git" class="project-link">
-                                <img src="images/Bank-Protal.png" alt="Bank Portal" class="project-image">
+                                <img src="images/Bank-portal.png" alt="Bank Portal" class="project-image">
                                 <div class="card-content">
                                     <h3 class="project-title">Bank Portal</h3>
+                                    <h4>Tech Stack:</h4>
+                                    <div class="tech-stack">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="20" alt="python logo" />
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" height="20" alt="django logo"  />
+                                        <img src="https://avatars.githubusercontent.com/u/215947?s=200&v=4" height="20" alt="Matplotlib"/>
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" height="20" alt="sqlite logo" />
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="20" alt="html5 logo" />
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="20" alt="css3 logo" />
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" height="20" alt="bootstrap logo" />
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="20" alt="javascript logo" />
+                                    </div>
                                     <p>An intuitive and responsive banking platform demonstrating the capabilities of front-end and back-end web technologies.</p>
+                                    <br>
                                     <a href="https://github.com/UnnatMalik/Bank-Portal" class="github-link">
                                         <img src="images/github.png" alt="GitHub" class="github-icon">
                                     </a>
@@ -462,6 +513,12 @@
                                 <img src="images/bro-bot-ai.png" alt="Bro-Bot-AI" class="project-image">
                                 <div class="card-content">
                                     <h3 class="project-title">Bro-Bot-AI</h3>
+                                    <h4>Tech Stack:</h4>
+                                    <div class="tech-stack">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="20" alt="python logo" />
+                                        <img src="https://avatars.githubusercontent.com/u/151674099?s=200&v=4" height="20" alt="Ollama logo"  />
+                                        <img src="https://avatars.githubusercontent.com/u/102273996?s=200&v=4" height="20" alt="Flet logo"  />
+                                    </div>
                                     <p>This is a AI chat bot made with Ollama LLM using LLama3 model and langchain.</p>
                                     <br>
                                     <a href="https://github.com/UnnatMalik/Bro-Bot-AI" class="github-link">
@@ -475,6 +532,11 @@
                                 <img src="images/Calculator.png" alt="CalcPy" class="project-image">
                                 <div class="card-content">
                                     <h3 class="project-title">CalcPy</h3>
+                                    <h4>Tech Stack:</h4>
+                                    <div class="tech-stack">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="20" alt="python logo" />
+                                        <img src="https://avatars.githubusercontent.com/u/102273996?s=200&v=4" height="20" alt="Flet logo"  />
+                                    </div>
                                     <p>A fully functional calculator built using Python and the Flet module, offering a seamless user experience.</p>
                                     <br>
                                     <a href="https://github.com/UnnatMalik/CalcPy" class="github-link">
@@ -488,6 +550,11 @@
                                 <img src="images/Food-App.png" alt="Food App" class="project-image">
                                 <div class="card-content">
                                     <h3 class="project-title">Food App</h3>
+                                    <h4>Tech Stack:</h4>
+                                    <div class="tech-stack">
+                                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="20" alt="python logo" />
+                                        <img src="https://avatars.githubusercontent.com/u/102273996?s=200&v=4" height="20" alt="Flet logo"  />
+                                    </div>
                                     <p>A frontend UI for a food app, created using Python and the Flet module, showcasing a clean and user-friendly design.</p>
                                     <a href="https://github.com/UnnatMalik/Food-App" class="github-link">
                                         <img src="images/github.png" alt="GitHub" class="github-icon">
@@ -501,4 +568,3 @@
     </div>
 </body>
 </html>
-
