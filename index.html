@@ -366,6 +366,67 @@
     height: 32px;
 }
 
+.certifications {
+    margin: 30px 0;
+    text-align: left;
+    animation: slideIn 1s ease-in-out forwards;
+}
+
+.certifications h2 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #ff6f61;
+    animation: slideIn 1s ease-in-out forwards;
+}
+
+.certification-container {
+    display: flex;
+    flex-direction: row; /* Align items in a row */
+    gap: 20px; /* Space between certification boxes */
+    flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+    justify-content: center; /* Center the items horizontally */
+}
+
+.certification-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: background 0.3s ease, transform 0.3s ease;
+    width: 250px; /* Fixed width for each certification box */
+    text-align: left; /* Align text to the left */
+    animation: slideIn 1s ease-in-out forwards;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.certification-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+.certification-item h3 {
+    font-size: 1.2rem;
+    color: #ff6f61;
+}
+
+.certification-item p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #ccc;
+}
+
+.verify-link {
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.link-icon {
+    width: 20px;
+    height: 20px;
+}
     </style>
 </head>
 
@@ -589,6 +650,34 @@
                             </a>
                         </div>
                     </div>
+        </div>
+        <hr>
+        <div class="certifications">
+            <h2>Certifications</h2>
+            <div class="certification-container">
+                <div class="certification-item">
+                    <h3>Introduction to Back-End Development</h3>
+                    <p>Meta back-end developer - Coursera</p>
+                    <a href="https://www.coursera.org/account/accomplishments/verify/0AM9QXQFK7XZ" class="verify-link">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png" alt="Verify Icon" class="link-icon">
+                    </a>
+                </div>
+                <div class="certification-item">
+                    <h3>Databases for Back-End Development</h3>
+                    <p>Meta backend developer - Coursera</p>
+                    <a href="https://www.coursera.org/account/accomplishments/verify/7HVK97WL56A0" class="verify-link">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png" alt="Verify Icon" class="link-icon">
+                    </a>
+                </div>
+                <div class="certification-item">
+                    <h3>Programming in Python</h3>
+                    <p>Meta backend developer - Coursera</p>
+                    <a href="https://www.coursera.org/account/accomplishments/verify/7BI2O1OC55DI" class="verify-link">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png" alt="Verify Icon" class="link-icon">
+                    </a>
+                </div>
+                <!-- Add more certifications as needed -->
+            </div>
         </div>
 
     </div>
