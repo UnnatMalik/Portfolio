@@ -123,19 +123,21 @@
         }
 
         .education {
-            display:flex;
-            flex-direction: column;
+            display: flex;
+            flex-direction: row; /* Change to row to display items next to each other */
             gap: 20px;
+            flex-wrap: wrap; /* Allow wrapping to the next line if needed */
         }
 
         .education-item {
-            display:flex;
+            display: flex;
             align-items: center;
             gap: 20px;
             background: rgba(255, 255, 255, 0.1);
             padding: 15px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            width: 45%; /* Adjust width to fit two items in a row */
         }
 
         .education-image {
@@ -146,7 +148,7 @@
         }
 
         .education-content {
-            display:inline-flexbox;
+            display: flex;
             flex-direction: column;
         }
 
@@ -562,6 +564,14 @@
                         <p>Thakur College of Engineering and Technology, Kandivali</p>
                     </div>
                     <div class="year">2023 - 2027</div>
+                </div>
+            </div>
+            <div class="education-item">
+                <img src="images/image.png" alt="School Image" class="education-image">
+                <div class="education-content">
+                    <p><strong>Higher Secondary Certificate (HSC) in Science</strong></p>
+                    <p>SEVEN SQUARE ACADEMY, Mira Road</p>
+                    <div class="year">2021 - 2023</div>
                 </div>
             </div>
         </div>
