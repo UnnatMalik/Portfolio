@@ -18,7 +18,7 @@
         }
 
         header {
-            display:contents;
+            display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px 10%;
@@ -61,6 +61,7 @@
             align-items: center;
             text-align: center;
             animation: fadeIn 2s ease-in-out;
+            padding: 0 10%;
         }
 
         .hero h1 {
@@ -124,9 +125,10 @@
 
         .education {
             display: flex;
-            flex-direction: row; /* Change to row to display items next to each other */
+            flex-direction: row;
             gap: 20px;
-            flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+            flex-wrap: wrap;
+            justify-content: center; /* Center the items horizontally */
         }
 
         .education-item {
@@ -137,7 +139,8 @@
             padding: 15px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-            width: 45%; /* Adjust width to fit two items in a row */
+            width: calc(50% - 20px); /* Adjust width to fit two items in a row with gap */
+            box-sizing: border-box; /* Ensure padding and border are included in the width */
         }
 
         .education-image {
@@ -430,6 +433,86 @@
     width: 20px;
     height: 20px;
 }
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .hero .cta {
+        padding: 10px 20px;
+    }
+
+    .section {
+        padding: 50px 5%;
+    }
+
+    .education-item {
+        width: 100%; /* Full width for smaller screens */
+    }
+
+    .project {
+        margin-bottom: 20px;
+    }
+
+    header nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    header a {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero .cta {
+        padding: 8px 16px;
+    }
+
+    .section h2 {
+        font-size: 2rem;
+    }
+
+    .skills {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .skill img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .project .tech-stack img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .project .view-project-button {
+        padding: 8px 16px;
+    }
+
+    .contact .social-icons a {
+        font-size: 1.5rem;
+    }
+
+    .contact .resume-button {
+        padding: 8px 16px;
+    }
+}
     </style>
 </head>
 
@@ -668,6 +751,16 @@
                     <h3>Programming in Python</h3>
                     <p>Meta backend developer - Coursera</p>
                     <a href="https://www.coursera.org/account/accomplishments/verify/7BI2O1OC55DI" class="verify-link">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png" alt="Verify Icon" class="link-icon">
+                    </a>
+                </div>
+            </div>
+            <div class="certification-item">
+                <img src="images/Meta.png" alt="Certification Logo" class="certification-logo">
+                <div class="certification-content">
+                    <h3>Django Web Framework</h3>
+                    <p>Meta backend developer - Coursera</p>
+                    <a href="https://www.coursera.org/account/accomplishments/verify/OZE0S981D70U" class="verify-link">
                         <img src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png" alt="Verify Icon" class="link-icon">
                     </a>
                 </div>
