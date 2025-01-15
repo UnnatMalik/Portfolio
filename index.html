@@ -30,27 +30,62 @@
         }
 
         header img {
-            width: 50px;
-            height: 50px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
         }
 
-        header nav {
-            display: flex;
-            align-items: center;
-            gap: 20px;
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
         }
 
-        header a {
-            color: #ffffff;
+        .sidebar a {
+            padding: 10px 15px;
             text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-            margin: 30px;
+            font-size: 1.2rem;
+            color: #ffffff;
+            display: block;
+            transition: 0.3s;
         }
 
-        header a:hover {
-            color: #ffdf6c;
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 2rem;
+            margin-left: 50px;
+        }
+
+        #main {
+            transition: margin-left 0.5s;
+            padding: 16px;
+        }
+
+        .openbtn {
+            font-size: 1.5rem;
+            cursor: pointer;
+            background-color: #111;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .openbtn:hover {
+            background-color: #444;
         }
 
         .hero {
@@ -460,13 +495,18 @@
         margin-bottom: 20px;
     }
 
-    header nav {
-        flex-direction: column;
-        gap: 10px;
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
     }
 
-    header a {
-        margin: 10px 0;
+    .sidebar a {
+        float: left;
+    }
+
+    #main {
+        margin-left: 0;
     }
 }
 
@@ -518,270 +558,272 @@
 
 <body>
     <canvas></canvas>
-    <header>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#education">Education</a>
-            <a href="#projects">Projects</a>
-            <a href="#certifications">Certifications</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+    <div class="sidebar" id="mySidebar">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+    </div>
 
-    <section class="hero">
-        <h1>Hello, I'm Unnat Malik</h1>
-        <p>Backend Python Developer | Django Dev | Backend Dev</p>
-        <a class="cta" href="#projects">View My Work</a>
-    </section>
+    <div id="main">
+        <button class="openbtn" id="menuButton" onclick="toggleNav()">&#9776;</button>
 
-    <section id="about" class="section">
-        <h2>About Me</h2>
-        <div class="about">
-            <div class="about-item">
-                <img src="images/Unnat.jpg" alt="Profile Image" class="about-image">
-                <div class="about-content">
-                    <p>Hi, I'm Unnat Malik, a second-year B.Tech student specializing in Computer Engineering at Thakur College of Engineering and Technology. I have a strong foundation in programming, with proficiency in Python, Django, C, and C++. I am experienced in version control using Git and GitHub, which I actively use to collaborate on projects and manage code efficiently. With a passion for software development and problem-solving, I am continuing to expand my knowledge and skills in the field of technology.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        <section class="hero">
+            <h1>Hello, I'm Unnat Malik</h1>
+            <p>Backend Python Developer | Django Dev | Backend Dev</p>
+            <a class="cta" href="#projects">View My Work</a>
+        </section>
 
-    <section id="skills" class="section">
-        <h2>Skills</h2>
-        <h3> Languages </h3>
-        <div class="skills">
-            <div class="skill">
-                <img src="https://img.icons8.com/color/48/python--v1.png" alt="Python">
-                <p>Python</p>
-            </div>
-            <div class="skill">
-                <img src="https://img.icons8.com/color/48/c-programming.png" alt="C">
-                <p>C</p>
-            </div>
-            <div class="skill">
-                <img src="https://img.icons8.com/color/48/c-plus-plus-logo.png" alt="C++">
-                <p>C++</p>
-            </div>
-            <div class="skill">
-                <img src="https://img.icons8.com/color/48/html-5.png" alt="HTML5">
-                <p>HTML5</p>
-            </div>
-            <div class="skill">
-                <img src="https://img.icons8.com/color/48/css3.png" alt="CSS3">
-                <p>CSS</p>
-            </div>
-            
-        </div>
-        <h3> Frameworks </h3>
-        <div class="skills">
-            <div class="skill">
-                <img src="https://img.icons8.com/color/48/django.png" alt="Django">
-                <p>Django</p>
-            </div>
-            <div class="skill">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" height="40" alt="pandas logo"  />
-                <p>Pandas</p>
-            </div>
-            <div class="skill">
-                <img src="https://avatars.githubusercontent.com/u/215947?s=200&v=4" alt="Matplotlib">
-                <p>Matplotlib</p>
-            </div>
-            <div class="skill">
-                <img src="https://cdn.simpleicons.org/pytest/0A9EDC" height="45" alt="pytest logo"  />
-            <p>PyTest</p>
-            </div>
-            <div class="skill">
-                <img src="https://img.icons8.com/?size=48&id=Rffi8qeb2fK5&format=png" height="55" alt="streamlit logo" />
-                <p>Streamlit</p>
-            </div>
-        </div>
-        <h3> Tools </h3>
-        <div class="skills">
-            <div class="skill">
-                <img src="https://img.icons8.com/color/48/git.png" alt="Git">
-                <p>Git</p>
-            </div>
-            <div class="skill">
-                <img src="https://img.icons8.com/color/48/github--v1.png" alt="GitHub">
-                <p>GitHub</p>
-            </div>
-            <div class="skill">
-                <img src="https://skillicons.dev/icons?i=vscode" alt="VS Code">
-                <p>VS Code</p>
-            </div>
-            <div class="skill">
-                <img src="https://img.icons8.com/color/48/pycharm.png" alt="PyCharm">
-                <p>PyCharm</p>
-            </div>
-            <div class="skill">
-                <img src="https://skillicons.dev/icons?i=vercel" height="50" alt="vercel logo"  />
-                <p>Vercel</p>
-            </div>
-        </div>
-        <h3> Databases </h3>
-        <div class="skills">
-            <div class="skill">
-                <img src="https://img.icons8.com/color/48/mysql.png" alt="MySQL">
-                <p>MySQL</p>
-            </div>
-            <div class="skill">
-                <img src="https://skillicons.dev/icons?i=sqlite" alt="SQLite">
-                <p>SQLite</p>
-            </div>
-            <div class="skill">
-                <img src="https://img.icons8.com/external-flat-juicy-fish/48/external-sql-coding-and-development-flat-flat-juicy-fish.png" alt="SQL">
-                <p>SQL</p>
-            </div>
-        </div>    
-    </section>
-
-    <section id="education" class="section">
-        <h2>Education</h2>
-        <div class="education">
-            <div class="education-item">
-                <img class="education-image" src="images/college.png" alt="College Image">
-                <div class="education-content">
-                    <div class="details">
-                        <p><strong>Bachelor of Engineering (B.E.) in Computer Engineering</strong></p>
-                        <p>Thakur College of Engineering and Technology, Kandivali</p>
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <div class="about">
+                <div class="about-item">
+                    <img src="images/Unnat.jpg" alt="Profile Image" class="about-image">
+                    <div class="about-content">
+                        <p>Hi, I'm Unnat Malik, a second-year B.Tech student specializing in Computer Engineering at Thakur College of Engineering and Technology. I have a strong foundation in programming, with proficiency in Python, Django, C, and C++. I am experienced in version control using Git and GitHub, which I actively use to collaborate on projects and manage code efficiently. With a passion for software development and problem-solving, I am continuing to expand my knowledge and skills in the field of technology.</p>
                     </div>
-                    <div class="year">2023 - 2027</div>
                 </div>
             </div>
-            <div class="education-item">
-                <img src="images/image.png" alt="School Image" class="education-image">
-                <div class="education-content">
-                    <p><strong>Higher Secondary Certificate (HSC) in Science</strong></p>
-                    <p>SEVEN SQUARE ACADEMY, Mira Road</p>
-                    <div class="year">2021 - 2023</div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="projects" class="section">
-        <h2>Projects</h2>
-        <div class="projects">
-            <div class="project">
-                <img src="images/DBMS.png" alt="DBMS Portal">
-                <h3>DBMS Portal</h3>
-                <p>A comprehensive educational platform for Database Management Systems (DBMS).</p>
-                <div class="tech-stack">
-                    <img src="https://img.icons8.com/color/48/python.png" alt="Python">
-                    <img src="https://img.icons8.com/color/48/django.png" alt="Django">
+        <section id="skills" class="section">
+            <h2>Skills</h2>
+            <h3> Languages </h3>
+            <div class="skills">
+                <div class="skill">
+                    <img src="https://img.icons8.com/color/48/python--v1.png" alt="Python">
+                    <p>Python</p>
+                </div>
+                <div class="skill">
+                    <img src="https://img.icons8.com/color/48/c-programming.png" alt="C">
+                    <p>C</p>
+                </div>
+                <div class="skill">
+                    <img src="https://img.icons8.com/color/48/c-plus-plus-logo.png" alt="C++">
+                    <p>C++</p>
+                </div>
+                <div class="skill">
                     <img src="https://img.icons8.com/color/48/html-5.png" alt="HTML5">
-                    <img src="https://img.icons8.com/color/48/css3.png" alt="CSS3">
-                    <img src="https://img.icons8.com/color/48/javascript.png" alt="javascript logo" />
-                    <img src="https://skillicons.dev/icons?i=vercel" alt="vercel logo"  />
-                    <img src="https://skillicons.dev/icons?i=sqlite" height="5"  alt="SQLite">
+                    <p>HTML5</p>
                 </div>
-                <a href="https://dbms-website.vercel.app/" class="view-project-button" target="_blank">View Project</a>
+                <div class="skill">
+                    <img src="https://img.icons8.com/color/48/css3.png" alt="CSS3">
+                    <p>CSS</p>
+                </div>
+                
             </div>
-            <div class="project">
-                <img src="images/Bank-portal.png" alt="Banking Portal">
-                <h3>Banking Portal</h3>
-                <p>A secure and responsive banking application offering features such as user registration and account management.</p>
-                <div class="tech-stack">
-                    <img src="https://img.icons8.com/color/48/python.png" alt="Python">
+            <h3> Frameworks </h3>
+            <div class="skills">
+                <div class="skill">
                     <img src="https://img.icons8.com/color/48/django.png" alt="Django">
-                    <img src="https://img.icons8.com/color/48/html-5.png" alt="HTML5">
-                    <img src="https://img.icons8.com/color/48/css3.png" alt="CSS3">
-                    <img src="https://img.icons8.com/color/48/javascript.png" alt="javascript logo" />
-                    <img src="https://skillicons.dev/icons?i=vercel" alt="vercel logo"  />
-                    <img src="https://skillicons.dev/icons?i=sqlite" height="5"  alt="SQLite">
-                    <img src="https://avatars.githubusercontent.com/u/215947?s=200&v=4" alt="Matplotlib" />
+                    <p>Django</p>
                 </div>
-                <a href="https://github.com/UnnatMalik/Bank-Portal.git" class="view-project-button" target="_blank">View Code</a>
-            </div>
-            <div class="project">
-                <img src="images/stock_analysis.png" alt="Stock Analysis">
-                <h3>Stock Analysis</h3>
-                <p>A real-time stock analysis application with financial summaries and charts.</p>
-                <div class="tech-stack">
-                    <img src="https://img.icons8.com/color/48/python.png" alt="Python">
-                    <img src="https://avatars.githubusercontent.com/u/215947?s=200&v=4" alt="Matplotlib" />
-                    <img src="https://img.icons8.com/?size=48&id=Rffi8qeb2fK5&format=png" alt="streamlit">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
+                <div class="skill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" height="40" alt="pandas logo"  />
+                    <p>Pandas</p>
                 </div>
-                <a href="https://stock-anaylsis.streamlit.app/" class="view-project-button" target="_blank">View Project</a>
-            </div>
-            <div class="project">
-                <img src="images/bro-bot-ai.png" alt="Chat-bot">
-                <h3>Chat-bot</h3>
-                <p>An AI-powered chatbot using the LLama3 model and LangChain for intelligent responses.</p>
-                <div class="tech-stack">
-                    <img src="https://img.icons8.com/color/48/python.png" alt="Python">
-                    <img src="https://avatars.githubusercontent.com/u/151674099?s=200&v=4" alt="Ollama logo"  />
-                                        <img src="https://avatars.githubusercontent.com/u/102273996?s=200&v=4" alt="Flet logo"  />
+                <div class="skill">
+                    <img src="https://avatars.githubusercontent.com/u/215947?s=200&v=4" alt="Matplotlib">
+                    <p>Matplotlib</p>
                 </div>
-                <a href="https://github.com/unnatmalik/Bro-Bot-AI" class="view-project-button" target="_blank">View Code</a>
+                <div class="skill">
+                    <img src="https://cdn.simpleicons.org/pytest/0A9EDC" height="45" alt="pytest logo"  />
+                <p>PyTest</p>
+                </div>
+                <div class="skill">
+                    <img src="https://img.icons8.com/?size=48&id=Rffi8qeb2fK5&format=png" height="55" alt="streamlit logo" />
+                    <p>Streamlit</p>
+                </div>
             </div>
-        </div>
-    </section>
+            <h3> Tools </h3>
+            <div class="skills">
+                <div class="skill">
+                    <img src="https://img.icons8.com/color/48/git.png" alt="Git">
+                    <p>Git</p>
+                </div>
+                <div class="skill">
+                    <img src="https://img.icons8.com/color/48/github--v1.png" alt="GitHub">
+                    <p>GitHub</p>
+                </div>
+                <div class="skill">
+                    <img src="https://skillicons.dev/icons?i=vscode" alt="VS Code">
+                    <p>VS Code</p>
+                </div>
+                <div class="skill">
+                    <img src="https://img.icons8.com/color/48/pycharm.png" alt="PyCharm">
+                    <p>PyCharm</p>
+                </div>
+                <div class="skill">
+                    <img src="https://skillicons.dev/icons?i=vercel" height="50" alt="vercel logo"  />
+                    <p>Vercel</p>
+                </div>
+            </div>
+            <h3> Databases </h3>
+            <div class="skills">
+                <div class="skill">
+                    <img src="https://img.icons8.com/color/48/mysql.png" alt="MySQL">
+                    <p>MySQL</p>
+                </div>
+                <div class="skill">
+                    <img src="https://skillicons.dev/icons?i=sqlite" alt="SQLite">
+                    <p>SQLite</p>
+                </div>
+                <div class="skill">
+                    <img src="https://img.icons8.com/external-flat-juicy-fish/48/external-sql-coding-and-development-flat-flat-juicy-fish.png" alt="SQL">
+                    <p>SQL</p>
+                </div>
+            </div>    
+        </section>
 
-    <section id="certifications" class="section">
-        <h2>Certifications</h2>
-        <div class="certification-container">
-            <div class="certification-item">
-                <img src="images/Meta.png" alt="Certification Logo" class="certification-logo">
-                <div class="certification-content">
-                    <h3>Introduction to Back-End Development</h3>
-                    <p>Meta back-end developer - Coursera
-                    </p>
-                    <a href="https://www.coursera.org/account/accomplishments/verify/0AM9QXQFK7XZ" class="verify-link">
-                        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png" alt="Verify Icon" class="link-icon">
-                    </a>
+        <section id="education" class="section">
+            <h2>Education</h2>
+            <div class="education">
+                <div class="education-item">
+                    <img class="education-image" src="images/college.png" alt="College Image">
+                    <div class="education-content">
+                        <div class="details">
+                            <p><strong>Bachelor of Engineering (B.E.) in Computer Engineering</strong></p>
+                            <p>Thakur College of Engineering and Technology, Kandivali</p>
+                        </div>
+                        <div class="year">2023 - 2027</div>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <img src="images/image.png" alt="School Image" class="education-image">
+                    <div class="education-content">
+                        <p><strong>Higher Secondary Certificate (HSC) in Science</strong></p>
+                        <p>SEVEN SQUARE ACADEMY, Mira Road</p>
+                        <div class="year">2021 - 2023</div>
+                    </div>
                 </div>
             </div>
-            <div class="certification-item">
-                <img src="images/Meta.png" alt="Certification Logo" class="certification-logo">
-                <div class="certification-content">
-                    <h3>Databases for Back-End Development</h3>
-                    <p>Meta backend developer - Coursera
-                    </p>
-                    <a href="https://www.coursera.org/account/accomplishments/verify/7HVK97WL56A0" class="verify-link">
-                        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png" alt="Verify Icon" class="link-icon">
-                    </a>
-                </div>
-            </div>
-            <div class="certification-item">
-                <img src="images/Meta.png" alt="Certification Logo" class="certification-logo">
-                <div class="certification-content">
-                    <h3>Programming in Python</h3>
-                    <p>Meta backend developer - Coursera</p>
-                    <a href="https://www.coursera.org/account/accomplishments/verify/7BI2O1OC55DI" class="verify-link">
-                        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png" alt="Verify Icon" class="link-icon">
-                    </a>
-                </div>
-            </div>
-            <div class="certification-item">
-                <img src="images/Meta.png" alt="Certification Logo" class="certification-logo">
-                <div class="certification-content">
-                    <h3>Django Web Framework</h3>
-                    <p>Meta backend developer - Coursera</p>
-                    <a href="https://www.coursera.org/account/accomplishments/verify/OZE0S981D70U" class="verify-link">
-                        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png" alt="Verify Icon" class="link-icon">
-                    </a>
-                </div>
-            </div>
-            <!-- Add more certifications as needed -->
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="section contact">
-        <h2>Contact Me</h2>
-        <div class="social-icons">
-            <a href="https://github.com/unnatmalik" target="_blank">
-                <img src="https://img.icons8.com/ios-glyphs/30/ffffff/github.png" alt="GitHub">
-            </a>
-            <a href="https://linkedin.com/in/unnat-malik-2b90bb2b4" target="_blank">
-                <img src="https://img.icons8.com/ios-glyphs/30/ffffff/linkedin.png" alt="LinkedIn">
-            </a>
-        </div>
-        <a href="images/UnnatMalikResume.pdf" class="resume-button" target="_blank">Resume</a>
-        <p>&copy; 2025 Unnat Malik. All Rights Reserved.</p>
-    </section>
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="project">
+                    <img src="images/DBMS.png" alt="DBMS Portal">
+                    <h3>DBMS Portal</h3>
+                    <p>A comprehensive educational platform for Database Management Systems (DBMS).</p>
+                    <div class="tech-stack">
+                        <img src="https://img.icons8.com/color/48/python.png" alt="Python">
+                        <img src="https://img.icons8.com/color/48/django.png" alt="Django">
+                        <img src="https://img.icons8.com/color/48/html-5.png" alt="HTML5">
+                        <img src="https://img.icons8.com/color/48/css3.png" alt="CSS3">
+                        <img src="https://img.icons8.com/color/48/javascript.png" alt="javascript logo" />
+                        <img src="https://skillicons.dev/icons?i=vercel" alt="vercel logo"  />
+                        <img src="https://skillicons.dev/icons?i=sqlite" height="5"  alt="SQLite">
+                    </div>
+                    <a href="https://dbms-website.vercel.app/" class="view-project-button" target="_blank">View Project</a>
+                </div>
+                <div class="project">
+                    <img src="images/Bank-portal.png" alt="Banking Portal">
+                    <h3>Banking Portal</h3>
+                    <p>A secure and responsive banking application offering features such as user registration and account management.</p>
+                    <div class="tech-stack">
+                        <img src="https://img.icons8.com/color/48/python.png" alt="Python">
+                        <img src="https://img.icons8.com/color/48/django.png" alt="Django">
+                        <img src="https://img.icons8.com/color/48/html-5.png" alt="HTML5">
+                        <img src="https://img.icons8.com/color/48/css3.png" alt="CSS3">
+                        <img src="https://img.icons8.com/color/48/javascript.png" alt="javascript logo" />
+                        <img src="https://skillicons.dev/icons?i=vercel" alt="vercel logo"  />
+                        <img src="https://skillicons.dev/icons?i=sqlite" height="5"  alt="SQLite">
+                        <img src="https://avatars.githubusercontent.com/u/215947?s=200&v=4" alt="Matplotlib" />
+                    </div>
+                    <a href="https://github.com/UnnatMalik/Bank-Portal.git" class="view-project-button" target="_blank">View Code</a>
+                </div>
+                <div class="project">
+                    <img src="images/stock_analysis.png" alt="Stock Analysis">
+                    <h3>Stock Analysis</h3>
+                    <p>A real-time stock analysis application with financial summaries and charts.</p>
+                    <div class="tech-stack">
+                        <img src="https://img.icons8.com/color/48/python.png" alt="Python">
+                        <img src="https://avatars.githubusercontent.com/u/215947?s=200&v=4" alt="Matplotlib" />
+                        <img src="https://img.icons8.com/?size=48&id=Rffi8qeb2fK5&format=png" alt="streamlit">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas">
+                    </div>
+                    <a href="https://stock-anaylsis.streamlit.app/" class="view-project-button" target="_blank">View Project</a>
+                </div>
+                <div class="project">
+                    <img src="images/bro-bot-ai.png" alt="Chat-bot">
+                    <h3>Chat-bot</h3>
+                    <p>An AI-powered chatbot using the LLama3 model and LangChain for intelligent responses.</p>
+                    <div class="tech-stack">
+                        <img src="https://img.icons8.com/color/48/python.png" alt="Python">
+                        <img src="https://avatars.githubusercontent.com/u/151674099?s=200&v=4" alt="Ollama logo"  />
+                                            <img src="https://avatars.githubusercontent.com/u/102273996?s=200&v=4" alt="Flet logo"  />
+                    </div>
+                    <a href="https://github.com/unnatmalik/Bro-Bot-AI" class="view-project-button" target="_blank">View Code</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications" class="section">
+            <h2>Certifications</h2>
+            <div class="certification-container">
+                <div class="certification-item">
+                    <img src="images/Meta.png" alt="Certification Logo" class="certification-logo">
+                    <div class="certification-content">
+                        <h3>Introduction to Back-End Development</h3>
+                        <p>Meta back-end developer - Coursera
+                        </p>
+                        <a href="https://www.coursera.org/account/accomplishments/verify/0AM9QXQFK7XZ" class="verify-link">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png" alt="Verify Icon" class="link-icon">
+                        </a>
+                    </div>
+                </div>
+                <div class="certification-item">
+                    <img src="images/Meta.png" alt="Certification Logo" class="certification-logo">
+                    <div class="certification-content">
+                        <h3>Databases for Back-End Development</h3>
+                        <p>Meta backend developer - Coursera
+                        </p>
+                        <a href="https://www.coursera.org/account/accomplishments/verify/7HVK97WL56A0" class="verify-link">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png" alt="Verify Icon" class="link-icon">
+                        </a>
+                    </div>
+                </div>
+                <div class="certification-item">
+                    <img src="images/Meta.png" alt="Certification Logo" class="certification-logo">
+                    <div class="certification-content">
+                        <h3>Programming in Python</h3>
+                        <p>Meta backend developer - Coursera</p>
+                        <a href="https://www.coursera.org/account/accomplishments/verify/7BI2O1OC55DI" class="verify-link">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png" alt="Verify Icon" class="link-icon">
+                        </a>
+                    </div>
+                </div>
+                <div class="certification-item">
+                    <img src="images/Meta.png" alt="Certification Logo" class="certification-logo">
+                    <div class="certification-content">
+                        <h3>Django Web Framework</h3>
+                        <p>Meta backend developer - Coursera</p>
+                        <a href="https://www.coursera.org/account/accomplishments/verify/OZE0S981D70U" class="verify-link">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png" alt="Verify Icon" class="link-icon">
+                        </a>
+                    </div>
+                </div>
+                <!-- Add more certifications as needed -->
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <h2>Contact Me</h2>
+            <div class="social-icons">
+                <a href="https://github.com/unnatmalik" target="_blank">
+                    <img src="https://img.icons8.com/ios-glyphs/30/ffffff/github.png" alt="GitHub">
+                </a>
+                <a href="https://linkedin.com/in/unnat-malik-2b90bb2b4" target="_blank">
+                    <img src="https://img.icons8.com/ios-glyphs/30/ffffff/linkedin.png" alt="LinkedIn">
+                </a>
+            </div>
+            <a href="images/UnnatMalikResume.pdf" class="resume-button" target="_blank">Resume</a>
+            <p>&copy; 2025 Unnat Malik. All Rights Reserved.</p>
+        </section>
+    </div>
 
     <script>
         // Background Animation with Particles
@@ -840,6 +882,22 @@
 
         initParticles();
         animate();
+
+        function toggleNav() {
+            const sidebar = document.getElementById("mySidebar");
+            const main = document.getElementById("main");
+            const menuButton = document.getElementById("menuButton");
+
+            if (sidebar.style.width === "250px") {
+                sidebar.style.width = "0";
+                main.style.marginLeft = "0";
+                menuButton.innerHTML = "&#9776;";
+            } else {
+                sidebar.style.width = "250px";
+                main.style.marginLeft = "250px";
+                menuButton.innerHTML = "&times;";
+            }
+        }
     </script>
 </body>
 
