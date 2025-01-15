@@ -508,6 +508,15 @@
     #main {
         margin-left: 0;
     }
+
+    header nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    header a {
+        margin: 10px 0;
+    }
 }
 
 @media (max-width: 480px) {
@@ -891,11 +900,11 @@
             if (sidebar.style.width === "250px") {
                 sidebar.style.width = "0";
                 main.style.marginLeft = "0";
-                menuButton.innerHTML = "&#9776;";
+                menuButton.innerHTML = "&#9776; Menu";
             } else {
                 sidebar.style.width = "250px";
                 main.style.marginLeft = "250px";
-                menuButton.innerHTML = "&times;";
+                menuButton.innerHTML = "&times; Close";
             }
         }
     </script>
