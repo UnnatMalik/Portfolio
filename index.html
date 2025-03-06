@@ -895,10 +895,82 @@
             from, to { border-color: transparent }
             50% { border-color: #4CAF50 }
         }
+
+        /* Replace the existing loader CSS with this */
+        .loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+        }
+
+        .text-loader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .text-loader span {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #4CAF50;
+            animation: bounce 0.8s ease infinite;
+            text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+            margin: 0 2px;
+        }
+
+        .text-loader span:nth-child(2) { animation-delay: 0.1s; }
+        .text-loader span:nth-child(3) { animation-delay: 0.2s; }
+        .text-loader span:nth-child(4) { animation-delay: 0.3s; }
+        .text-loader span:nth-child(5) { animation-delay: 0.4s; }
+        .text-loader span:nth-child(6) { animation-delay: 0.5s; }
+        .text-loader span:nth-child(7) { animation-delay: 0.6s; }
+        .text-loader span:nth-child(8) { animation-delay: 0.7s; }
+        .text-loader span:nth-child(9) { animation-delay: 0.8s; }
+        .text-loader span:nth-child(10) { animation-delay: 0.9s; }
+        .text-loader span:nth-child(11) { animation-delay: 1s; }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+                color: #4CAF50;
+            }
+            50% {
+                transform: translateY(-20px);
+                color: #388e3c;
+            }
+        }
+
+        .loader-wrapper.fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
     </style>
 </head>
 
 <body>
+    <div class="loader-wrapper">
+        <div class="text-loader">
+            <span>U</span>
+            <span>n</span>
+            <span>n</span>
+            <span>a</span>
+            <span>t</span>
+            <span>&nbsp;</span>
+            <span>M</span>
+            <span>a</span>
+            <span>l</span>
+            <span>i</span>
+            <span>k</span>
+        </div>
+    </div>
     <div class="scroll-progress"></div>
     <header>
         <nav>
@@ -1162,7 +1234,7 @@
                     <img src="https://avatars.githubusercontent.com/u/38809367?v=4" alt="Devfolio">
                 </a>
             </div>
-            <a href="images/UnnatMalikResume.pdf" class="resume-button" target="_blank">Resume</a>
+            <a href="images/UnnatMalik.pdf" class="resume-button" target="_blank">Resume</a>
         </section>
     </main>
 
@@ -1339,6 +1411,19 @@
             }
             type();
         }
+
+        // Add this to your existing JavaScript, right after DOMContentLoaded
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hide loader after page is fully loaded
+            window.addEventListener('load', () => {
+                const loaderWrapper = document.querySelector('.loader-wrapper');
+                setTimeout(() => {
+                    loaderWrapper.classList.add('fade-out');
+                }, 2000); // Increased time to show the animation longer
+            });
+
+            // Your existing DOMContentLoaded code...
+        });
     </script>
 </body>
 
