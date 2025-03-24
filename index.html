@@ -151,6 +151,82 @@
             text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
         }
 
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 101;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #4CAF50;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-right {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 250px;
+                background: rgba(0, 0, 0, 0.95);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: right 0.3s ease;
+                padding: 2rem;
+                gap: 2rem;
+            }
+
+            .nav-right.active {
+                right: 0;
+            }
+
+            .mobile-menu-btn.active span:nth-child(1) {
+                transform: rotate(45deg) translate(8px, 8px);
+            }
+
+            .mobile-menu-btn.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .mobile-menu-btn.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -7px);
+            }
+
+            nav li {
+                margin: 1rem 0;
+                opacity: 0;
+                transform: translateX(50px);
+                transition: all 0.3s ease;
+            }
+
+            .nav-right.active li {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            nav li:nth-child(1) { transition-delay: 0.1s; }
+            nav li:nth-child(2) { transition-delay: 0.2s; }
+            nav li:nth-child(3) { transition-delay: 0.3s; }
+            nav li:nth-child(4) { transition-delay: 0.4s; }
+            nav li:nth-child(5) { transition-delay: 0.5s; }
+            nav li:nth-child(6) { transition-delay: 0.6s; }
+            nav li:nth-child(7) { transition-delay: 0.7s; }
+        }
+
         /* Sections */
         section {
             padding: 6rem 0;
@@ -952,6 +1028,295 @@
             opacity: 0;
             visibility: hidden;
         }
+
+        /* Add these responsive styles to your existing CSS */
+
+        /* General Responsive Styles */
+        @media (max-width: 1024px) {
+            section {
+                padding: 4rem 1rem;
+            }
+
+            #home h1 {
+                font-size: 3.5rem;
+            }
+
+            .projects-container {
+                padding: 10px;
+            }
+
+            .project-card {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Home Section */
+            #home h1 {
+                font-size: 2.8rem;
+            }
+
+            .content {
+                margin-top: 15vh;
+                padding: 15px;
+            }
+
+            /* About Section */
+            #about p {
+                font-size: 1rem;
+                padding: 0 20px;
+            }
+
+            /* Skills Section */
+            .skills-container {
+                gap: 15px;
+            }
+
+            .skill-category {
+                max-width: 100%;
+                margin: 0 15px;
+            }
+
+            .skill-item {
+                padding: 10px 15px;
+            }
+
+            /* Projects Section */
+            .project-card {
+                width: 100%;
+                margin: 0 15px;
+            }
+
+            .tech-stack img {
+                width: 25px;
+                height: 25px;
+            }
+
+            /* Education Section */
+            #education ul {
+                padding: 0 15px;
+            }
+
+            #education li {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+            }
+
+            #education li img {
+                margin-bottom: 10px;
+            }
+
+            /* Certifications Section */
+            .certifications-list li {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+                gap: 10px;
+            }
+
+            .verify-icon {
+                margin-top: 10px;
+            }
+
+            /* Contact Section */
+            .contact-icons {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .resume-button {
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Home Section */
+            #home h1 {
+                font-size: 2.2rem;
+            }
+
+            #home .content p {
+                font-size: 1.1rem;
+            }
+
+            .cta {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            /* Planet Sizes */
+            .planet1 {
+                width: 60px;
+                height: 60px;
+            }
+
+            .planet2 {
+                width: 50px;
+                height: 50px;
+            }
+
+            .moon {
+                width: 40px;
+                height: 40px;
+            }
+
+            /* Section Headers */
+            section h2 {
+                font-size: 2.2rem;
+            }
+
+            /* Skill Items */
+            .skill-item {
+                font-size: 0.9rem;
+            }
+
+            .skill-item img {
+                width: 20px;
+                height: 20px;
+            }
+
+            /* Project Cards */
+            .project-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .project-card p {
+                font-size: 0.9rem;
+            }
+
+            /* Loader */
+            .text-loader span {
+                font-size: 2rem;
+            }
+
+            /* Footer */
+            footer {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Additional Touch Device Optimizations */
+        @media (hover: none) {
+            .project-card:hover,
+            .skill-item:hover,
+            .contact-icons a:hover {
+                transform: none;
+            }
+
+            nav a::after {
+                display: none;
+            }
+
+            .cta:hover {
+                transform: none;
+            }
+        }
+
+        /* Landscape Mode Optimization */
+        @media (max-height: 500px) and (orientation: landscape) {
+            #home {
+                height: auto;
+                min-height: 100vh;
+            }
+
+            .content {
+                margin-top: 10vh;
+            }
+
+            .planet {
+                display: none;
+            }
+        }
+
+        /* High DPI Screens */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .star {
+                box-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+            }
+        }
+
+        /* Update these styles in your existing CSS */
+        @media (max-width: 1024px) {
+            #home h1 {
+                font-size: 4rem;
+            }
+
+            #home .content p {
+                font-size: 1.3rem;
+            }
+
+            .content {
+                margin-top: 15vh;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #home h1 {
+                font-size: 3rem;
+                padding: 0 15px;
+            }
+
+            #home .content p {
+                font-size: 1.1rem;
+                padding: 0 20px;
+                white-space: normal; /* Allow text to wrap */
+                max-width: 100%;
+            }
+
+            .content {
+                margin-top: 12vh;
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #home h1 {
+                font-size: 2.5rem;
+                padding: 0 10px;
+            }
+
+            #home .content p {
+                font-size: 1rem;
+                padding: 0 15px;
+                line-height: 1.4;
+            }
+
+            .content {
+                margin-top: 10vh;
+            }
+
+            .cta {
+                margin-top: 20px;
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+
+        /* Update typing animation styles */
+        #home .content p {
+            white-space: pre-wrap; /* Allow text to wrap while preserving spaces */
+            overflow: hidden;
+            position: relative;
+            display: inline-block;
+            margin: 0 auto;
+            font-size: 1.5rem;
+            color: #fff;
+            max-width: 90%; /* Prevent text from overflowing on small screens */
+            line-height: 1.5;
+        }
+
+        /* Update the typing animation to work better on mobile */
+        @media (max-width: 768px) {
+            #home .content p::after {
+                position: relative;
+                top: 0;
+                margin-left: 1px;
+            }
+        }
     </style>
 </head>
 
@@ -978,6 +1343,12 @@
                 <img src="images/fevicon.png" alt="Logo" class="logo">
                 <span class="name">Unnat Malik</span>
             </div>
+            <!-- Add this button after the nav-left div in your navbar -->
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="nav-right">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -1387,14 +1758,29 @@
             
             function typeWriter() {
                 if (i < text.length) {
-                    typedElement.textContent = text.substring(0, i + 1);
+                    // Check window width and add line breaks for mobile
+                    if (window.innerWidth <= 768 && text[i] === '|') {
+                        typedElement.innerHTML += '<br>' + text[i];
+                    } else {
+                        typedElement.innerHTML += text[i];
+                    }
                     i++;
                     setTimeout(typeWriter, 100);
                 }
             }
             
+            // Clear any existing text
+            typedElement.innerHTML = '';
+            
             // Start typing animation
             typeWriter();
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                typedElement.innerHTML = '';
+                i = 0;
+                typeWriter();
+            });
         });
 
         // Update your existing typeWriter function
@@ -1423,6 +1809,34 @@
             });
 
             // Your existing DOMContentLoaded code...
+        });
+
+        // Add this to your existing JavaScript
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navRight = document.querySelector('.nav-right');
+            const navLinks = document.querySelectorAll('.nav-right a');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.toggle('active');
+                navRight.classList.toggle('active');
+            });
+
+            // Close menu when clicking a link
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuBtn.classList.remove('active');
+                    navRight.classList.remove('active');
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('nav')) {
+                    mobileMenuBtn.classList.remove('active');
+                    navRight.classList.remove('active');
+                }
+            });
         });
     </script>
 </body>
